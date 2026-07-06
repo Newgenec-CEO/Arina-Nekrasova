@@ -5,19 +5,14 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/",                    // ← Главное изменение
+  base: "/",
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    rollupOptions: {
-      output: {
-        manualChunks: undefined, // иногда помогает
-      },
-    },
   },
 });
