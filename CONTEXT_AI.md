@@ -138,6 +138,12 @@ npm run preview
 - Сборка `npm run build` — успешно
 - Создан `README.md`, `.gitignore`
 
+### 2026-07-06 — Исправление деплоя на Timeweb (белая страница / MIME error)
+
+- В `vite.config.ts` добавлены `base: "./"` и явный `build.outDir: "dist"`
+- Причина ошибки: Timeweb отдавал исходники вместо `dist/` (часто из-за директории сборки `build` вместо `dist`)
+- В `README.md` добавлена секция с настройками Timeweb App Platform
+
 ### 2026-07-06 — REFERENCE_ANALYSIS.md возвращён в git
 
 - `REFERENCE_ANALYSIS.md` убран из `.gitignore` — файл будет в репозитории для будущего анализа/адаптации проекта
